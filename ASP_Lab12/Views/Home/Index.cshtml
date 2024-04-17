@@ -1,0 +1,35 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model IEnumerable<Company>
+<html>
+    <head>
+        <title>
+        @ViewData["Title"]
+        </title>
+    </head>
+    <body>
+        <h2 class="display-4">
+            List of companies
+        </h2>
+        <table class="table table-striped table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <td scope="col">ID</td>
+                    <td scope="col">Name</td>
+                    <td scope="col">Country</td>
+                </tr>
+            </thead>
+            <tbody>
+            @foreach (Company company in Model)
+            {
+                        <tr>
+                            <td scope="row">@company.CompanyID</td>
+                            <td>@company.Name</td>
+                            <td>@company.Country</td>
+                        </tr>
+            }
+            </tbody>
+        </table>
+    </body>
+</html>
